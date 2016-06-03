@@ -1,16 +1,20 @@
-
 {
-  "name": "clientRRRATP",
+  "name": "profileCard",
   "version": "1.0.0",
-  "description": "Starter kit for Client React Router, Redux, Async, Tests, and Production",
+  "description": "personal strength card",
   "scripts": {
-    "prestart": "babel-node tools/startMessage.js",
-    "start": "npm-run-all --parallel open:src lint:watch test:watch",
+    "dev": "npm-run-all --parallel open:src",
+    "pro": "npm run prebuild build",
+    "start": "npm run postbuild",
     "open:src": "babel-node tools/srcServer.js",
     "lint": "esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
-    "test": "mocha --reporter progress tools/testSetup.js \"src/**/spec.js\"",
-    "test:watch": "npm run test -- --watch"
+    "clean-dist": "npm run remove-dist && mkdir dist",
+    "remove-dist": "node_modules/.bin/rimraf ./dist",
+    "build:html": "babel-node tools/buildHtml.js",
+    "prebuild": "npm-run-all clean-dist lint build:html",
+    "build": "babel-node tools/build.js",
+    "postbuild": "node tools/distServer.js"
   },
   "author": "Mila Antonova",
   "license": "MIT",
@@ -67,6 +71,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/idillia/clientRRRATP"
+    "url": "none"
   }
 }
