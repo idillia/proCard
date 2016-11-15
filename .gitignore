@@ -3,5 +3,5 @@ terminal.glue
 dist
 .DS_Store
 npm-debug.log
-psyche*
+*psyche*
 al_twitter_users*

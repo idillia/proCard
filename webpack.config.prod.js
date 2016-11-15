@@ -34,18 +34,9 @@ export default {
        {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
        {test: /(\.css)$/, loader: ExtractTextPlugin.extract("css?sourceMap")},
        {test: /\.(eot|woff|woff2|ttf|svg|)(\?\S*)?$/, loader: 'url?limit=100000&name=[name]-[hash].[ext]'},
-       {test: /\.(png|jpg|jpeg|gif)$/, loader: "file-loader"}
+       {test: /\.(png|jpg|jpeg|gif)$/, loader: "file-loader"},
+       {test: /\.json$/, loader: "json"}
      ]
    }
-  // module: {
-  //   loaders: [
-  //     {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
-  //     {test: /(\.css)$/, loader: ExtractTextPlugin.extract("css?sourceMap")},
-  //     {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
-  //     {test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000'},
-  //     {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream'},
-  //     {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'}
-  //   ]
-  // }
 };
 
