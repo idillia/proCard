@@ -6,6 +6,7 @@ const ProfileListRow = ({profile}) => {
     <table className="table">
       <thead>
         <tr>
+        <img src={require("./../../images/old_personas/img-personal-the-advocate.png")} />
           <th>Id</th>
           <th>Handler</th>
           <th>Name</th>
