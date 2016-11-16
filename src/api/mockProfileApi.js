@@ -13,12 +13,84 @@ console.log(PsycheData);
 
 
 let generatePersonalArchetypes = function(personalTypes) {
-  let ar = [1,2,3, 4, 5];
-  return ar[_.random(0,ar.length -1)];
-  // return personalTypes.PersonalArchetypes[_.random(personalTypes.PersonalArchetypes - 1)]
+  let threeTypes = _.sample(personalTypes, 3);
+  while (threeTypes.length !== new Set(threeTypes).size) {
+    threeTypes = _.sample(personalTypes, 3);
+  }
+  return threeTypes;
 };
 
-console.log(generatePersonalArchetypes(PsycheData));
+let generateStrengthWords = function(StrengthWords) {
+  let fiveWords =  _.sample(StrengthWords, 5);
+  while (fiveWords.length !== new Set(fiveWords).size) {
+    fiveWords = _.sample(StrengthWords, 5);
+  }
+  return fiveWords;
+};
+
+let getBlendSentence = function(personalTypes,blendSentences) {
+  let threeTypes;
+  let types = generatePersonalArchetypes(personalTypes);
+  let invertedTypes = _.invert(personalTypes);
+
+  threeTypes = _.map(types, function(item) {return invertedTypes[item].slice(0, -1)});
+
+  let sentencesKyes = _.keys(blendSentences);
+
+
+// let found = '';
+// let re0 = new RegExp(threeTypes[0])
+// let re1 = new RegExp(threeTypes[1])
+// let re2 = new RegExp(threeTypes[2])
+
+// console.log(re0,re1,re2)
+
+// for(var i=0; i<sentencesKyes.length; i++) {
+//   if (sentencesKyes[i].match(re0) !== null) {
+//     console.log(sentencesKyes[i])
+//     if (sentencesKyes[i].match(re1) !== null) {
+//       console.log(sentencesKyes[i])
+    
+//   } else {
+//     break;
+//   }
+
+//   } else {
+//     break;
+//   }
+// }
+
+// // console.log(found); 
+
+
+
+// let str ='pabs_the_advocate_the_caretaker_the_mastermind_public_sentence_f';
+// // let str1 ='the_advocate_';
+
+// let reg= /the_mastermind_/;
+
+// console.log("regs:", str.match(re0));
+
+};
+
+
+// console.log(generateStrengthWords(PsycheData.StrengthWords));
+console.log(getBlendSentence(PsycheData.PersonalArchetypes, PsycheData.PersonalArchetypesBlendSentences));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
