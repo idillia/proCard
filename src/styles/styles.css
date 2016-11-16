@@ -1,9 +1,14 @@
 #app {
   font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #4d4d4d;
-  min-width: 550px;
-  max-width: 850px;
+  min-width: auto;
+  max-width: auto;
   margin: 0 auto;
+}
+
+.container-fluid {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
 }
 
 a.active {
@@ -13,3 +18,36 @@ a.active {
 nav {
   padding-top: 20px;
 }
+
+.tile h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  text-align: left;
+  padding-left: 25px;
+  padding-top: 20px;
+  margin: 0;
+  height: 36px;
+}
+.line {
+    height: 2px;
+    width: 100%;
+    background-color: #EAECF0;
+}
+
+.archetype-container {
+    margin: 20px auto 0;
+    width: 90%;
+    text-align: center;
+    padding-bottom: 35px;
+}
+
+
+/*@media screen and (min-width: 969px)
+
+.archetype-container {
+    font-size: 16px;
+    max-width: 900px;
+}
+*/
