@@ -21,6 +21,8 @@ export class DisplayProfilePage extends React.Component {
   }
 
   render() {
+    console.log("id: ", this.state)
+    console.log(this.props)
     return (
         <ProfileListRow 
           profile={this.state.profile}
@@ -38,7 +40,23 @@ DisplayProfilePage.contextTypes = {
   router: PropTypes.object
 };
 
-function getCourseById(profiles, id) {
+// function mapStateToProps(state, ownProps) {
+//   return {
+//     profiles: state.profiles
+//   };
+// }
+
+// // Third way to dispatch actions.
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     actions: bindActionCreators(profileActions, dispatch)
+//   };
+// }
+
+
+
+
+function getProfileById(profiles, id) {
   const profile = profiles.filter(profile => profile.id == id);
   if(profile) return profile[0];
   return null;
@@ -46,10 +64,10 @@ function getCourseById(profiles, id) {
 
 function mapStateToProps(state, ownProps) {
   const profileId = ownProps.params.id;// from the path '/profile/:id'
-  let profile = {id: '', name: '', screen_name: ''};
+  let profile = {id: '1', name: 'wq', screen_name: 'das'};
 
   if(profileId && state.profiles.length > 0) {
-    profile = getCourseById(state.profiles, profileId);
+    profile = getProfileById(state.profiles, profileId);
   }
 
   return {

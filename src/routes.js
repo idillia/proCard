@@ -11,3 +11,5 @@ export default (
     <Route path="profile/:id" component={DisplayProfilePage} />
   </Route>  
 );
+
+  
