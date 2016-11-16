@@ -7,7 +7,7 @@ import _ from 'underscore';
 // All calls return promises.
 
 
-console.log(PsycheData);
+// console.log(PsycheData);
 // console.log(PsycheData);
 
 
@@ -29,53 +29,38 @@ let generateStrengthWords = function(StrengthWords) {
 };
 
 let getBlendSentence = function(personalTypes,blendSentences) {
-  let threeTypes;
+  let threeTypes, regexThreeTypes, sentenceIsFound0, sentenceIsFound1, sentenceIsFound2, regexSentence, profileSentenceKey;
   let types = generatePersonalArchetypes(personalTypes);
   let invertedTypes = _.invert(personalTypes);
 
   threeTypes = _.map(types, function(item) {return invertedTypes[item].slice(0, -1)});
+  regexThreeTypes = _.map(threeTypes, function(item) {return new RegExp(item)});
 
   let sentencesKyes = _.keys(blendSentences);
 
+  sentenceIsFound0 = _.filter(sentencesKyes, function(item) {
+    return item.match(regexThreeTypes[0]);
+  })  
 
-// let found = '';
-// let re0 = new RegExp(threeTypes[0])
-// let re1 = new RegExp(threeTypes[1])
-// let re2 = new RegExp(threeTypes[2])
+  sentenceIsFound1 = _.filter(sentenceIsFound0, function(item) {
+    return item.match(regexThreeTypes[1]);
+  })
 
-// console.log(re0,re1,re2)
+  sentenceIsFound2 = _.filter(sentenceIsFound1, function(item) {
+    return item.match(regexThreeTypes[2]);
+  })
+  
 
-// for(var i=0; i<sentencesKyes.length; i++) {
-//   if (sentencesKyes[i].match(re0) !== null) {
-//     console.log(sentencesKyes[i])
-//     if (sentencesKyes[i].match(re1) !== null) {
-//       console.log(sentencesKyes[i])
-    
-//   } else {
-//     break;
-//   }
-
-//   } else {
-//     break;
-//   }
-// }
-
-// // console.log(found); 
+  regexSentence = /user_sentence_n/;
 
 
-
-// let str ='pabs_the_advocate_the_caretaker_the_mastermind_public_sentence_f';
-// // let str1 ='the_advocate_';
-
-// let reg= /the_mastermind_/;
-
-// console.log("regs:", str.match(re0));
-
+  profileSentenceKey = _.filter(sentenceIsFound2, function(item) {return item.match(regexSentence)})[0];
+  console.log(profileSentenceKey)
+  return blendSentences[profileSentenceKey];
 };
 
 
-// console.log(generateStrengthWords(PsycheData.StrengthWords));
-console.log(getBlendSentence(PsycheData.PersonalArchetypes, PsycheData.PersonalArchetypesBlendSentences));
+getBlendSentence(PsycheData.PersonalArchetypes, PsycheData.PersonalArchetypesBlendSentences);
 
 
 
