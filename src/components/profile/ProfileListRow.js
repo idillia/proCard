@@ -2,11 +2,14 @@ import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 
 const ProfileListRow = ({profile}) => {
+  let strImages = profile.personal_archetype[0]
+    console.log("prof", profile);
+
   return (
     <table className="table">
       <thead>
         <tr>
-        <img src={require("./../../images/old_personas/img-personal-the-advocate.png")} />
+        <img src={require("./../../images/new_personas/186 X 186/Advocate  - Pope.png")} />
           <th>Id</th>
           <th>Handler</th>
           <th>Name</th>
