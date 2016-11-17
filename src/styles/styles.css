@@ -1,9 +1,17 @@
-#app {
-  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+body {
+  background-color: #EAECF0 !important;
+}
+
+
+#app, body{
+  font: 1.3vh 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #4d4d4d;
   min-width: auto;
   max-width: auto;
   margin: 0 auto;
+  
+  height: 100%;
+  width:100%;
 }
 
 .container-fluid {
@@ -16,11 +24,13 @@ a.active {
 }
 
 nav {
-  padding-top: 20px;
+  padding-top: 1vh;
+  background-color: #2d94c1 !important;
+  border-color: #2d94c1 !important;
 }
 
 .tile h2 {
-  font-size: 16px;
+  font-size: 1.4vh;
   font-weight: 700;
   color: #000;
   text-transform: uppercase;
@@ -28,21 +38,65 @@ nav {
   padding-left: 25px;
   padding-top: 20px;
   margin: 0;
-  height: 36px;
+  height: 4.2vh;
+  background-color: white;
 }
 .line {
-    height: 2px;
+    height: 0.2vh;
     width: 100%;
     background-color: #EAECF0;
 }
 
 .archetype-container {
-    margin: 20px auto 0;
-    width: 90%;
+    margin: 0;
+    width: 100%;
     text-align: center;
-    padding-bottom: 35px;
+    padding-bottom: 3vh;
+    background-color: white;
+}
+.archetype-image {
+    background-size: contain;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+.archetype-name {
+    height: 3vh;
+    line-height: 3vh;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 2vh;
+}
+.archCol {
+  /*width:33%;*/
 }
 
+.col-lg-2 {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.three-arch {
+  padding-top: 2vh;
+  padding-left: 3vh;
+}
+.strength {
+  display: inline-block;
+  padding: 8px 7px 7px 30px;
+  border-radius: 5px;
+  color: #313D4E;
+  text-transform: uppercase;
+  height: 16px;
+  line-height: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  background: url(./../images/icon-grey-star.png) no-repeat;
+  background-color: #F3F4F6;
+  background-position: 1vh center;
+  background-size: 17px;
+  margin: 5px;
+  text-align: right;
+  font-size: 13px;
+  text-transform: uppercase;
+}
 
 /*@media screen and (min-width: 969px)
 
