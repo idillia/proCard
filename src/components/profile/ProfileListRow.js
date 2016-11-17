@@ -5,7 +5,7 @@ import _ from 'underscore';
 
 const ProfileListRow = ({profile}) => {
   let strImages = profile.personal_archetype[0]
-  console.log("prof", profile.image_url);
+ 
 
   let pickGender = function(arr) {
     let genderArray = [];
@@ -17,29 +17,51 @@ const ProfileListRow = ({profile}) => {
 
   let theGender = pickGender(["_m", "_f"]);
 
-  console.log(theGender);
+  const invertedArchTypes = {
+    Advocate:"the_advocate_n",
+    Caretaker:"the_caretaker_n",
+    Dreamer:"the_dreamer_n",
+    "Go getter":"the_go_getter_n",
+    Humanitarian:"the_humanitarian_n",
+    Idealist:"the_idealist_n",
+    Inventor:"the_inventor_n",
+    Mastermind:"the_mastermind_n",
+    Maverick:"the_maverick_n",
+    Protector:"the_protector_n",
+    Rock:"the_rock_n",
+    Socialite:"the_socialite_n",
+    "Straight shooter":"the_straight_shooter_n",
+    Strategist:"the_strategist_n",
+    Technician:"the_technician_n",
+    Visionary:"the_visionary_n",
+  }
 
+  console.log("inverted", invertedArchTypes, "strImag", strImages)
+  
+   console.log("prof", strImages);
+  var archTypeKeyArr = function(a,b) {
+    let archTypeKey = [];
+    // console.log(a)
+    // console.log(b)
+    for (var i=0; i<=a.length; i++) {
+      for (var key in b) {
+        if(key === a[i])
+          archTypeKey.push(b[key].slice(0,-2))
+      }
+    }  
+    return archTypeKey;  
+  }(strImages, invertedArchTypes);
 
-    let a = "the_advocate";
-    let b = "the_go_getter";
-    let c = "the_maverick"; 
+  console.log("forImagesReady",archTypeKeyArr);
+
+  let one = archTypeKeyArr[0];
+  let two = archTypeKeyArr[1];
+  let three = archTypeKeyArr[2];
+
     const archImageStyle = {
-      'the_advocate': {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + a + theGender[0] + ".png") +')','height': '80px' },
-      'the_go_getter': {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + b + theGender[1] + ".png") +')','height': '80px'},
-      'the_maverick': {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + c + theGender[2] +  ".png") +')', 'height': '80px'}, 
-      'the_dreamer': {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + a + theGender[0] + ".png") +')','height': '80px' },
-      'the_caretaker': {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + a + theGender[1] + ".png") +')','height': '80px' },
-      'the_straight_shoooter': {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + a + theGender[2] + ".png") +')','height': '80px' },
-      'the_socialite': {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + a + theGender[0] + ".png") +')','height': '80px' },
-      'the_humanitarian': {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + a + theGender[1] + ".png") +')','height': '80px' },
-      'the_idealist': {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + a + theGender[2] + ".png") +')','height': '80px' },
-      'the_inventor': {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + a + theGender[0] + ".png") +')','height': '80px' },
-      'the_mastermind': {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + a + theGender[1] + ".png") +')','height': '80px' },
-      'the_protector': {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + a + theGender[2] + ".png") +')','height': '80px' },
-      'the_rock': {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + a + theGender[0] + ".png") +')','height': '80px' },
-      'the_strategist':{'backgroundImage':'url(' + require("./../../images/new_personas/186/" + a + theGender[1] + ".png") +')','height': '80px' },
-      'the_technician': {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + a + theGender[2] + ".png") +')','height': '80px' },
-      'the_visionary': {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + a + theGender[0] + ".png") +')','height': '80px' }
+      one: {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + one + theGender[0] + ".png") +')','height': '80px' },
+      two: {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + two + theGender[1] + ".png") +')','height': '80px'},
+      three: {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + three + theGender[2] +  ".png") +')', 'height': '80px'}
     }
 
   const archNameStyle = {
@@ -67,8 +89,8 @@ const ProfileListRow = ({profile}) => {
         <div className="tile">
           <h2><Link to={'/profile/' + profile.id}>{profile.id}</Link></h2>
           <h2>PHOTO_HERE</h2>
-          <h2>TWITTER_HANDLER_HERE</h2>
-          <h2>NAME_HERE</h2>
+          <h2>@{profile["screen_name"]}</h2>
+          <h2>{profile.name}</h2>
           <h2>BIO_HERE</h2>
         </div>
       </div>
@@ -79,34 +101,32 @@ const ProfileListRow = ({profile}) => {
           <div className="archetype-container">
             <div className="row three-arch">
               <div className="col-lg-4 archCol">
-                <div style={archImageStyle["the_advocate"]} className="archetype-image"></div>
-                <div className="archetype-name" style={archNameStyle["the_advocate"]}>ADVOCATE</div>
+                <div style={archImageStyle.one} className="archetype-image"></div>
+                <div className="archetype-name" style={archNameStyle["the_advocate"]}>{strImages[0]}</div>
               </div>
               <div className="col-lg-4 archCol">
-                <div className="archetype-image" style={archImageStyle["the_go_getter"]}></div>
-                <div className="archetype-name" style={archNameStyle["the_go_getter"]}>GO GETTER</div>
+                <div className="archetype-image" style={archImageStyle.two}></div>
+                <div className="archetype-name" style={archNameStyle["the_go_getter"]}>{strImages[1]}</div>
               </div>
               <div className="col-lg-4 archCol">
-                <div className="archetype-image" style={archImageStyle["the_maverick"]}>
+                <div className="archetype-image" style={archImageStyle.three}>
                 </div>
-                <div className="archetype-name" style={archNameStyle["the_maverick"]}>MAVERICK</div>
+                <div className="archetype-name" style={archNameStyle["the_maverick"]}>{strImages[2]}</div>
               </div>
             </div>
-            <span className="strength">Empathic</span>
-            <span className="strength">Empathic</span>
-            <span className="strength">Empathic</span>
-            <span className="strength">Empathic</span>
-            <span className="strength">Empathic</span>
-            <span className="strength">Empathic</span>
+            <span className="strength">{profile["strength_words"][0][0]}</span>
+            <span className="strength">{profile["strength_words"][0][1]}</span>
+            <span className="strength">{profile["strength_words"][0][2]}</span>
+            <span className="strength">{profile["strength_words"][0][3]}</span>
+            <span className="strength">{profile["strength_words"][0][4]}</span>
+            <span className="strength">{profile["strength_words"][0][5]}</span>
+
           </div>
           <div>
             <div className="tile tagline-title">
               <h2>Tagline</h2>
               <div className="line"></div>
-
-            <div className="tagline-body">
-            You are an energetic and enthusiastic multi-tasker who is able to take an innovative but organized approach to synthesizing across perspectives on an idea or situation.
-            </div>
+            <div className="tagline-body">{profile["personal_archetype_blend_sentences"]}</div>
             </div>
           </div>
         </div>

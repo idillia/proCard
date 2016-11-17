@@ -42,9 +42,9 @@ let generatePersonalArchetypes = function(personalTypes) {
 };
 
 let generateStrengthWords = function(StrengthWords) {
-  let fiveWords =  _.sample(StrengthWords, 5);
+  let fiveWords =  _.sample(StrengthWords, 6);
   while (fiveWords.length !== new Set(fiveWords).size) {
-    fiveWords = _.sample(StrengthWords, 5);
+    fiveWords = _.sample(StrengthWords, 6);
   }
   return fiveWords;
 };
@@ -78,23 +78,24 @@ let getBlendSentence = function(personalTypes,blendSentences) {
 };
 
 
-let filloutProfiles = function(json, pa, sw, pabs, personalTypes,blendSentences){
+let filloutProfiles = function(json, pa, sw, pabs, personalTypes,StrengthWords, blendSentences){
   for(var i = 0; i<=json.length; i++) {
     for(var key in json[i]) {
       if(key == pa) {
         json[i][pa].push(generatePersonalArchetypes(personalTypes));
       }
       else if(key == sw) {
-        json[i][sw].push(generateStrengthWords(personalTypes));
+        json[i][sw].push(generateStrengthWords(StrengthWords));
       }
       else if(key === pabs) {
         json[i][pabs].push(getBlendSentence(personalTypes,blendSentences));
       }
+      
     }
   }
 }
 
-filloutProfiles(profiles, "personal_archetype", "strength_words", "personal_archetype_blend_sentences", PsycheData.PersonalArchetypes, PsycheData.PersonalArchetypesBlendSentences);
+filloutProfiles(profiles, "personal_archetype", "strength_words", "personal_archetype_blend_sentences", PsycheData.PersonalArchetypes, PsycheData.StrengthWords, PsycheData.PersonalArchetypesBlendSentences);
 
 
 
