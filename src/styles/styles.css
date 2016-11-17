@@ -14,10 +14,10 @@ body {
   width:100%;
 }
 
-.container-fluid {
+/*.container-fluid {
   padding-right: 0px !important;
   padding-left: 0px !important;
-}
+}*/
 
 a.active {
   color: orange;
@@ -47,7 +47,7 @@ nav {
     background-color: #EAECF0;
 }
 
-.archetype-container {
+.archetype-container, .tagline-body {
     margin: 0;
     width: 100%;
     text-align: center;
@@ -70,13 +70,22 @@ nav {
   /*width:33%;*/
 }
 
+.tagline-title {
+  margin-top:0.8vh;
+}
+
+.tagline-body {
+  padding:2vh;
+
+}
+
 .col-lg-2 {
   padding-right: 0 !important;
   padding-left: 0 !important;
 }
 .three-arch {
   padding-top: 2vh;
-  padding-left: 3vh;
+  /*padding-left: 3vh;*/
 }
 .strength {
   display: inline-block;

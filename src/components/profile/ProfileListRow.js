@@ -7,9 +7,9 @@ const ProfileListRow = ({profile}) => {
 
   // img1 = require("./../../images/new_personas/186/Advocate-m.png");
   const archImageStyle = {
-    'Advocate': {'background-image':'url(' +   require("./../../images/new_personas/186/Advocate-m.png") +')','height': '80px' },
-    'Go-Getter': {'background-image':'url(' +   require("./../../images/new_personas/186/Go-Getter-m.png") +')','height': '80px'},
-    'Maverick': {'background-image':'url(' +   require("./../../images/new_personas/186/Maverick-m.png") +')', 'height': '80px'} 
+    'Advocate': {'backgroundImage':'url(' +   require("./../../images/new_personas/186/Advocate-m.png") +')','height': '80px' },
+    'Go-Getter': {'backgroundImage':'url(' +   require("./../../images/new_personas/186/Go-Getter-m.png") +')','height': '80px'},
+    'Maverick': {'backgroundImage':'url(' +   require("./../../images/new_personas/186/Maverick-m.png") +')', 'height': '80px'} 
   }
 
   const archNameStyle = {
@@ -35,15 +35,15 @@ const ProfileListRow = ({profile}) => {
           <div className="line"></div>
           <div className="archetype-container">
             <div className="row three-arch">
-              <div className="col-lg-2 archCol">
+              <div className="col-lg-4 archCol">
                 <div style={archImageStyle.Advocate} className="archetype-image"></div>
                 <div className="archetype-name" style={archNameStyle.Advocate}>ADVOCATE</div>
               </div>
-              <div className="col-lg-2 archCol">
+              <div className="col-lg-4 archCol">
                 <div className="archetype-image" style={archImageStyle["Go-Getter"]}></div>
                 <div className="archetype-name" style={archNameStyle["Go-Getter"]}>GO GETTER</div>
               </div>
-              <div className="col-lg-2 archCol">
+              <div className="col-lg-4 archCol">
                 <div className="archetype-image" style={archImageStyle["Maverick"]}>
                 </div>
                 <div className="archetype-name" style={archNameStyle.Maverick}>MAVERICK</div>
@@ -55,11 +55,17 @@ const ProfileListRow = ({profile}) => {
             <span className="strength">Empathic</span>
             <span className="strength">Empathic</span>
             <span className="strength">Empathic</span>
-
           </div>
+          <div>
+            <div className="tile tagline-title">
+              <h2>Tagline</h2>
+              <div className="line"></div>
 
-
-
+            <div className="tagline-body">
+            You are an energetic and enthusiastic multi-tasker who is able to take an innovative but organized approach to synthesizing across perspectives on an idea or situation.
+            </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
