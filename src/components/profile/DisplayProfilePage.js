@@ -21,8 +21,6 @@ export class DisplayProfilePage extends React.Component {
   }
 
   render() {
-    console.log("id: ", this.state)
-    console.log(this.props)
     return (
         <ProfileListRow 
           profile={this.state.profile}

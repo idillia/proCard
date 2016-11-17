@@ -99,13 +99,13 @@ nav {
   font-weight: 500;
   background: url(./../images/icon-grey-star.png) no-repeat;
   background-color: #F3F4F6;
-  background-position: 1vh center;
+  background-position: 0.8vh center;
   background-size: 17px;
   margin: 5px;
   text-align: right;
   font-size: 13px;
   text-transform: uppercase;
-  height: 4vh;
+  height: 2.4vh;
 }
 
 
