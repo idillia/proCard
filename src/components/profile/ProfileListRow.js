@@ -1,6 +1,8 @@
 import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 import _ from 'underscore';
+import TextMeWidget from './TextMeWidget';
+
 
 
 const ProfileListRow = ({profile}) => {
@@ -87,8 +89,8 @@ const ProfileListRow = ({profile}) => {
     <div className="row">
       <div className="col-lg-6">
         <div className="tile">
-          <h2><Link to={'/profile/' + profile.id}>{profile.id}</Link></h2>
-          <h2>PHOTO_HERE</h2>
+          <div><Link to={'/profile/' + profile.id}><img src= {profile.image_url}/></Link></div>
+          
           <h2>@{profile["screen_name"]}</h2>
           <h2>{profile.name}</h2>
           <h2>BIO_HERE</h2>
@@ -130,6 +132,7 @@ const ProfileListRow = ({profile}) => {
             </div>
           </div>
         </div>
+        <TextMeWidget/>
       </div>
     </div>
   );

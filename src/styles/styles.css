@@ -108,6 +108,65 @@ nav {
   height: 4vh;
 }
 
+
+
+
+/* Widget */
+
+
+#fitscore-apple-link  {
+  border-color: #ff6363 !important;
+}
+
+#fitscore-android-link {
+   border-color: #fb3 !important;
+}
+
+.btn-primary {
+  padding: 11px 0;
+  width: 130px;
+}
+
+.gc-btn-red {
+  border: 0;
+  background-color: #ff6363 !important;
+  color: #fff;
+  padding: 13px 40px;
+  border-radius: 3px;
+  transition: all .1s ease-in-out;
+}
+
+.dnld-icon {
+  font-size: 2rem;
+  float: left;
+  height: 10px;
+  margin: -7px 0 0 12px;
+}
+
+.gc-btn-orange {
+  border: 0;
+  background-color: #fb3 !important;
+  color: #fff; 
+  padding: 13px 40px;
+  border-radius: 3px;
+  transition: all .1s ease-in-out;
+}    
+
+/*.icon-social-apple:before {
+    content: "e";
+}
+[class*=icon-]:before, [class^=icon-]:before {
+    font-family: goodco!important;
+    font-style: normal!important;
+    font-weight: 400!important;
+    font-variant: normal!important;
+    text-transform: none!important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}*/
+
 /*@media screen and (min-width: 969px)
 
 .archetype-container {
