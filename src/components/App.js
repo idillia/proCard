@@ -20,7 +20,7 @@ App.propTypes = {
 
 function mapStateToProps(state, ownPros) {
   return {
-    loading: state.numAjaxCallsInProgress > 0
+    // loading: state.numAjaxCallsInProgress > 0
   };
 }
 
