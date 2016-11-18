@@ -179,6 +179,6 @@ nav {
   text-align: center;
 }
 .text-widget {
-  display: table;
-  margin: 0 auto;
+/*  display: table;
+*/  margin: 0 auto;
 }

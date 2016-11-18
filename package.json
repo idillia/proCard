@@ -21,10 +21,15 @@
   "dependencies": {
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
+    "bootstrap-sass": "^3.3.7",
+    "css-less-loader": "^0.1.0",
     "csvtojson": "^1.0.3",
+    "font-awesome": "^4.7.0",
     "font-awesome-webpack": "0.0.4",
     "jquery": "2.2.3",
     "json-loader": "^0.5.4",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
     "react": "15.0.2",
     "react-dom": "15.0.2",
     "react-redux": "4.4.5",
@@ -73,6 +78,9 @@
     "webpack-dev-middleware": "1.6.1",
     "webpack-hot-middleware": "2.10.0",
     "yamljs": "^0.2.8"
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
   },
   "repository": {
     "type": "git",
