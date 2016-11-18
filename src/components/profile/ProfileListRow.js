@@ -38,24 +38,18 @@ const ProfileListRow = ({profile}) => {
     Visionary:"the_visionary_n",
   }
 
-  console.log("inverted", invertedArchTypes, "strImag", strImages)
-  
-   console.log("prof", strImages);
   var archTypeKeyArr = function(a,b) {
     let archTypeKey = [];
-    console.log(a)
-    console.log(b)
-    for (var key in b) {
-      for (var i=0; i<a.length; i++) {
-        if(key === a[i])
+    for (var i=0; i<a.length; i++) {
+      for (var key in b) {
+        if(key === a[i]) {
           archTypeKey.push(b[key].slice(0,-2))
+        }  
       }
     }  
     
         return archTypeKey;  
   }(strImages, invertedArchTypes);
-
-  console.log("forImagesReady",archTypeKeyArr);
 
   let one = archTypeKeyArr[0];
   let two = archTypeKeyArr[1];

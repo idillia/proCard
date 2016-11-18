@@ -21,7 +21,6 @@ export class DisplayProfilePage extends React.Component {
   }
 
   render() {
-    console.log("prof", this.state.profile)
     const profile = this.state.profile;
     return (
       <div>
@@ -60,7 +59,6 @@ function mapStateToProps(state, ownProps) {
   };
 
   if(profileId && state.profiles.length > 0) {
-    console.log("calling")
     profile = getProfileById(state.profiles, profileId);
   }
 

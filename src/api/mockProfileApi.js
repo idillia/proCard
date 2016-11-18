@@ -97,10 +97,6 @@ let filloutProfiles = function(json, pa, sw, pabs, personalTypes,StrengthWords, 
 
 filloutProfiles(profiles, "personal_archetype", "strength_words", "personal_archetype_blend_sentences", PsycheData.PersonalArchetypes, PsycheData.StrengthWords, PsycheData.PersonalArchetypesBlendSentences);
 
-
-
-console.log(profiles);
-
 class ProfileApi {
   static getAllProfiles() {
     return new Promise((resolve, reject) => {
