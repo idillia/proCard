@@ -21,10 +21,12 @@ export class DisplayProfilePage extends React.Component {
   }
 
   render() {
+    console.log("prof", this.state.profile)
+    const profile = this.state.profile;
     return (
-        <ProfileListRow 
-          profile={this.state.profile}
-        />
+      <div>
+        <ProfileListRow profile = {profile}/>
+      </div>
     );
   }
 }
@@ -33,24 +35,6 @@ DisplayProfilePage.propTypes = {
   profile: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 };
-
-DisplayProfilePage.contextTypes = {
-  router: PropTypes.object
-};
-
-// function mapStateToProps(state, ownProps) {
-//   return {
-//     profiles: state.profiles
-//   };
-// }
-
-// // Third way to dispatch actions.
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     actions: bindActionCreators(profileActions, dispatch)
-//   };
-// }
-
 
 
 
@@ -62,9 +46,21 @@ function getProfileById(profiles, id) {
 
 function mapStateToProps(state, ownProps) {
   const profileId = ownProps.params.id;// from the path '/profile/:id'
-  let profile = {id: '1', name: 'wq', screen_name: 'das'};
+  let profile = {
+    "id":"",
+    "screen_name": "",
+    "name": "",
+    "followers": 0,
+    "creation_date": "",
+    "personal_archetype": [["Maverick", "Maverick", "Maverick"]],
+    "strength_words": [["the_maverick","the_maverick","the_maverick","the_maverick","the_maverick","the_maverick"]],
+    "personal_archetype_blend_sentences": [["the_maverick"]],
+    "image_url": "",
+    "tweets": ""
+  };
 
   if(profileId && state.profiles.length > 0) {
+    console.log("calling")
     profile = getProfileById(state.profiles, profileId);
   }
 
