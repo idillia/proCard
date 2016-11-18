@@ -88,16 +88,15 @@ const ProfileListRow = ({profile}) => {
 
   return (
     <div className="row">
-      <div className="col-lg-4">
-        <div className="tile">
+      <div className="col-lg-12">
+        <div className="twitter-avatar tile">
           <div className = "ProfileAvatar">
             <img src= {profile.image_url} className="ProfileAvatar-image"/>
           </div>  
           <div className="twitter-name">{profile.name}</div>
           <div className="twitter-handler">@{profile["screen_name"]}</div>
         </div>
-      </div>
-      <div className="col-lg-8">
+
         <div className="tile">
           <h2>Your Personas & Strengths</h2>
           <div className="line"></div>
