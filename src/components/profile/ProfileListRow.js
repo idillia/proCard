@@ -43,15 +43,16 @@ const ProfileListRow = ({profile}) => {
    console.log("prof", strImages);
   var archTypeKeyArr = function(a,b) {
     let archTypeKey = [];
-    // console.log(a)
-    // console.log(b)
-    for (var i=0; i<=a.length; i++) {
-      for (var key in b) {
+    console.log(a)
+    console.log(b)
+    for (var key in b) {
+      for (var i=0; i<a.length; i++) {
         if(key === a[i])
           archTypeKey.push(b[key].slice(0,-2))
       }
     }  
-    return archTypeKey;  
+    
+        return archTypeKey;  
   }(strImages, invertedArchTypes);
 
   console.log("forImagesReady",archTypeKeyArr);
@@ -87,16 +88,16 @@ const ProfileListRow = ({profile}) => {
 
   return (
     <div className="row">
-      <div className="col-lg-6">
+      <div className="col-lg-4">
         <div className="tile">
-          <div><Link to={'/profile/' + profile.id}><img src= {profile.image_url}/></Link></div>
-          
-          <h2>@{profile["screen_name"]}</h2>
-          <h2>{profile.name}</h2>
-          <h2>BIO_HERE</h2>
+          <div className = "ProfileAvatar">
+            <img src= {profile.image_url} className="ProfileAvatar-image"/>
+          </div>  
+          <div className="twitter-name">{profile.name}</div>
+          <div className="twitter-handler">@{profile["screen_name"]}</div>
         </div>
       </div>
-      <div className="col-lg-6">
+      <div className="col-lg-8">
         <div className="tile">
           <h2>Your Personas & Strengths</h2>
           <div className="line"></div>
