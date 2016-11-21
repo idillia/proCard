@@ -24,6 +24,7 @@
     "bootstrap-sass": "^3.3.7",
     "css-less-loader": "^0.1.0",
     "csvtojson": "^1.0.3",
+    "firebase": "^3.6.1",
     "font-awesome": "^4.7.0",
     "font-awesome-webpack": "0.0.4",
     "jquery": "2.2.3",
