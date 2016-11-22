@@ -6,7 +6,7 @@ import TextMeWidget from './TextMeWidget';
 
 
 const ProfileListRow = ({profile}) => {
-  console.log("profile", profile);
+  // console.log("profile", profile);
   let strImages = profile.pa[0]
  
 

@@ -1,15 +1,13 @@
 import delay from './delay';
-// import PsycheData from './../../psyche.json'; 
-// import _ from 'underscore';
 
 // This file mocks a web API by working with the hard-coded data below.
 // It uses setTimeout to simulate the delay of an AJAX call.
 // All calls return promises.
 
 const profiles =   [
-{"id": "6033852",
-  "screen_name": "kefrusy",
-  "name": "Kevin Efrusy",
+{"id": "712173",
+  "screen_name": "scrappymcgyver",
+  "name": "Scrappy McGyver",
   "followers": 2348,
   "creation_date": "Mon May 14 14:08:07 +0000 2007",
   "image_url": "http://abs.twimg.com/sticky/default_profile_images/default_profile_6_normal.png",
