@@ -10,7 +10,7 @@ const profiles =   [
   "name": "Scrappy McGyver",
   "followers": 2348,
   "creation_date": "Mon May 14 14:08:07 +0000 2007",
-  "image_url": "http://abs.twimg.com/sticky/default_profile_images/default_profile_6_normal.png",
+  "image_url": "https://pbs.twimg.com/profile_images/799313498673057792/7HmCDrIb_400x400.jpg",
   "time_zone": "Pacific Time (US & Canada)",
   "creation_date_filter": true,
   "is_everyday_filter": false,

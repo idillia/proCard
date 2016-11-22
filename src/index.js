@@ -17,7 +17,6 @@ window.$ = window.jQuery = require('jquery');
 const Bootstrap = require('bootstrap-sass');
 Bootstrap.$ = $;
 require('../node_modules/bootstrap-sass/assets/javascripts/bootstrap');
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.min.css';
 
 
