@@ -1,6 +1,3 @@
-// var firebase = require("firebase/app");
-// require("firebase/auth");
-// require("firebase/database");
 import * as types from './actionTypes';
 import profileApi from '../api/mockProfileApi';
 import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
@@ -19,8 +16,20 @@ export function loadProfilesSuccess(profiles) {
   return {type: types.LOAD_PROFILES_SUCCESS, profiles};
 }
 
+export function loadProfiles() {
+  return dispatch => {
+    dispatch(beginAjaxCall());
+    rootRef.once("value").then(function(snapshot) {
 
-// Function below is a thunk it returns another function
+      let profiles = snapshot.child("users").val();
+      dispatch(loadProfilesSuccess(profiles));
+    }).catch(error => {
+      throw(error);
+    });
+  };
+}
+
+// UNCOMMENT FUNCTION BELOW TO USE MOCKUP DATA
 
 // export function loadProfiles() {
 //   return dispatch => {
@@ -35,19 +44,5 @@ export function loadProfilesSuccess(profiles) {
 //     });
 //   };
 // }
-
-export function loadProfiles() {
-  return dispatch => {
-    dispatch(beginAjaxCall());
-    rootRef.once("value").then(function(snapshot) {
-
-      let profiles = snapshot.child("users").val();
-         console.log("profile", profiles);
-      dispatch(loadProfilesSuccess(profiles));
-    }).catch(error => {
-      throw(error);
-    });
-  };
-}
 
 

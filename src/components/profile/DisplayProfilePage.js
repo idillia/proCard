@@ -35,17 +35,15 @@ DisplayProfilePage.propTypes = {
   actions: PropTypes.object.isRequired
 };
 
-
-
 function getProfileById(profiles, id) {
-  const profile = profiles.filter(profile => profile.id == id);
+  const profile = profiles.filter(profile => profile["screen_name"] == id);
   if(profile) return profile[0];
   return null;
 }
 
 function mapStateToProps(state, ownProps) {
   const profileId = ownProps.params.id;// from the path '/profile/:id'
-  console.log("profileId", profileId)
+  // console.log("profileId", profileId)
   let profile = {
     "id":"",
     "screen_name": "",
