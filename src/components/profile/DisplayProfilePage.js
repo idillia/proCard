@@ -45,17 +45,22 @@ function getProfileById(profiles, id) {
 
 function mapStateToProps(state, ownProps) {
   const profileId = ownProps.params.id;// from the path '/profile/:id'
+  console.log("profileId", profileId)
   let profile = {
     "id":"",
     "screen_name": "",
     "name": "",
     "followers": 0,
     "creation_date": "",
-    "personal_archetype": [["Maverick", "Maverick", "Maverick"]],
-    "strength_words": [["the_maverick","the_maverick","the_maverick","the_maverick","the_maverick","the_maverick"]],
-    "personal_archetype_blend_sentences": [["the_maverick"]],
+    "pa": [["Maverick", "Maverick", "Maverick"]],
+    "sw": [["the_maverick","the_maverick","the_maverick","the_maverick","the_maverick","the_maverick"]],
+    "pabs": [["the_maverick"]],
     "image_url": "",
-    "tweets": ""
+    "tweets": "",
+    "time_zone": "",
+    "creation_date_filter": "",
+    "is_everyday_filter": "",
+    "folowers_count_filter": ""
   };
 
   if(profileId && state.profiles.length > 0) {
