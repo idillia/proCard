@@ -29,6 +29,7 @@
     "font-awesome-webpack": "0.0.4",
     "jquery": "2.2.3",
     "json-loader": "^0.5.4",
+    "jsonfile": "^2.4.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "react": "15.0.2",

@@ -6,7 +6,8 @@ import TextMeWidget from './TextMeWidget';
 
 
 const ProfileListRow = ({profile}) => {
-  let strImages = profile.personal_archetype[0]
+  console.log("profile", profile);
+  let strImages = profile.pa[0]
  
 
   let pickGender = function(arr) {
@@ -110,19 +111,19 @@ const ProfileListRow = ({profile}) => {
                 <div className="archetype-name" style={archNameStyle["the_maverick"]}>{strImages[2]}</div>
               </div>
             </div>
-            <span className="strength">{profile["strength_words"][0][0]}</span>
-            <span className="strength">{profile["strength_words"][0][1]}</span>
-            <span className="strength">{profile["strength_words"][0][2]}</span>
-            <span className="strength">{profile["strength_words"][0][3]}</span>
-            <span className="strength">{profile["strength_words"][0][4]}</span>
-            <span className="strength">{profile["strength_words"][0][5]}</span>
+            <span className="strength">{profile.sw[0][0]}</span>
+            <span className="strength">{profile.sw[0][1]}</span>
+            <span className="strength">{profile.sw[0][2]}</span>
+            <span className="strength">{profile.sw[0][3]}</span>
+            <span className="strength">{profile.sw[0][4]}</span>
+            <span className="strength">{profile.sw[0][5]}</span>
 
           </div>
           <div>
             <div className="tile tagline-title">
               <h2>Tagline</h2>
               <div className="line"></div>
-            <div className="tagline-body">{profile["personal_archetype_blend_sentences"]}</div>
+            <div className="tagline-body">{profile["pabs"]}</div>
             </div>
           </div>
         </div>
