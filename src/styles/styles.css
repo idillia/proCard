@@ -111,8 +111,18 @@ nav {
   border-color: #ff6363 !important;
 }
 
+#apple-link > a {
+  color: white;
+  text-decoration: none;
+} 
+
 #android-link {
    border-color: #fb3 !important;
+}
+
+#android-link > a {
+  color: white;
+  text-decoration: none;
 }
 
 .btn-primary {
