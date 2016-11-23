@@ -3,7 +3,7 @@ import React, {PropTypes} from 'react';
 const TextMeWidget = () => {
   return (
     <div className = "row text-widget">
-        <div className = "col-lg-6"><iframe frameBorder="0" height="80" marginheight="0" marginwidth="0" src="https://api.linktexting.com/linkEmbed/6257b294-41ee-4546-a802-098bce68f1ea?autoIp=true" width="420"></iframe></div>
+        <div className = "col-lg-6"><iframe frameBorder="0" height="80" marginHeight="0" marginWidth="0" src="https://api.linktexting.com/linkEmbed/6257b294-41ee-4546-a802-098bce68f1ea?autoIp=true" width="420"></iframe></div>
         <div className = "col-lg-3">
           <div className="btn btn-primary gc-btn-red" id="apple-link">
             <a target="_blank" href= "https://itunes.apple.com/app/apple-store/id892559034?pt=89312809&ct=auto-twitter-strengthcards&mt=8">

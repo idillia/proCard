@@ -7,16 +7,16 @@ import TextMeWidget from './TextMeWidget';
 
 const ProfileListRow = ({profile}) => {
   // console.log("profile", profile);
-  let strImages = profile.pa[0]
+  let strImages = profile.pa[0];
  
 
   let pickGender = function(arr) {
     let genderArray = [];
-    for(var i =0; i<3; i++) {
+    for(let i =0; i<3; i++) {
       genderArray.push(_.sample(arr, 1)[0]);
     }
     return genderArray;
-  }
+  };
 
   let theGender = pickGender(["_m", "_f"]);
 
@@ -36,15 +36,15 @@ const ProfileListRow = ({profile}) => {
     "Straight shooter":"the_straight_shooter_n",
     Strategist:"the_strategist_n",
     Technician:"the_technician_n",
-    Visionary:"the_visionary_n",
-  }
+    Visionary:"the_visionary_n"
+  };
 
-  var archTypeKeyArr = function(a,b) {
+  let archTypeKeyArr = function(a,b) {
     let archTypeKey = [];
-    for (var i=0; i<a.length; i++) {
-      for (var key in b) {
+    for (let i=0; i<a.length; i++) {
+      for (let key in b) {
         if(key === a[i]) {
-          archTypeKey.push(b[key].slice(0,-2))
+          archTypeKey.push(b[key].slice(0,-2));
         }  
       }
     }  
@@ -60,7 +60,7 @@ const ProfileListRow = ({profile}) => {
       one: {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + one + theGender[0] + ".png") +')','height': '80px' },
       two: {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + two + theGender[1] + ".png") +')','height': '80px'},
       three: {'backgroundImage':'url(' + require("./../../images/new_personas/186/" + three + theGender[2] +  ".png") +')', 'height': '80px'}
-    }
+    };
 
   const archNameStyle = {
     'the_advocate': {'backgroundColor': '#bb51e2'},
@@ -79,7 +79,7 @@ const ProfileListRow = ({profile}) => {
     'the_strategist': {'backgroundColor': '#14dfce'},
     'the_technician': {'backgroundColor': '#14dfce'},
     'the_visionary': {'backgroundColor': '#14dfce'}
-  }
+  };
 
   return (
     <div className="row">
