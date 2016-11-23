@@ -15,7 +15,7 @@ export default {
   target: 'web',
   output: {
     path: __dirname + '/dist', // Note: Physical files are only output by the production build task `npm run build`.
-    publicPath: 'http://192.168.1.171:3000/',
+    publicPath: 'http://goodco.company/',
     filename: 'bundle.js'
   },
   devServer: {
