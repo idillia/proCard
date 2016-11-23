@@ -50,7 +50,7 @@ const profiles =   [
    "A methodical, analytical thinker, you take a strategic approach to plans and goals, and you're confident and efficient in pursuing them."
   ]
  }
- ]
+ ];
 
 
 
