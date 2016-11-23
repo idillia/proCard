@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 // const open = require('open');
+const compression = require('compression');
 
 
 /* eslint-disable no-console */
@@ -8,7 +9,7 @@ const path = require('path');
 const port = 3000;
 const app = express();
 
-// app.use(compression());
+app.use(compression());
 app.use(express.static('dist'));
 
 app.get('*', function(req, res) {
