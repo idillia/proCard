@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const open = require('open');
+// const open = require('open');
 
 
 /* eslint-disable no-console */
@@ -20,6 +20,6 @@ app.listen(port, function(err) {
   if (err) {
     console.log(err);
   } else {
-    open(`http://localhost:${port}`);
+    // open(`http://localhost:${port}`);
   }
 });
