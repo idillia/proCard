@@ -8,7 +8,8 @@ import config from './../../firebaseConfig';
 
 firebase.initializeApp(config);
 
-let rootRef = firebase.database().ref();
+let rootRef = firebase.database().ref("users").orderByKey();
+
 
 
 //Function below is action creater func and types.LOAD_PROFILES_SUCCESS is an action
@@ -16,18 +17,39 @@ export function loadProfilesSuccess(profiles) {
   return {type: types.LOAD_PROFILES_SUCCESS, profiles};
 }
 
+// export function loadProfiles() {
+//   return dispatch => {
+//     dispatch(beginAjaxCall());
+//     rootRef.once("value").then(function(snapshot) {
+
+//       let profiles = snapshot.child("users").val();
+//       dispatch(loadProfilesSuccess(profiles));
+//     }).catch(error => {
+//       throw(error);
+//     });
+//   };
+// }
+
+
 export function loadProfiles() {
   return dispatch => {
     dispatch(beginAjaxCall());
     rootRef.once("value").then(function(snapshot) {
-
-      let profiles = snapshot.child("users").val();
-      dispatch(loadProfilesSuccess(profiles));
+      snapshot.forEach(function(childSnapshot) {
+        var key = childSnapshot.key;
+        var childData = childSnapshot.val();
+        if(childData["screen_name"] == "lmholliday") {
+          console.log("key", childData);
+ 
+        }
+      })
     }).catch(error => {
       throw(error);
     });
   };
 }
+
+
 
 // UNCOMMENT FUNCTION BELOW TO USE MOCKUP DATA
 
