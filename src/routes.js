@@ -5,7 +5,7 @@ import DisplayProfilePage from './components/profile/DisplayProfilePage'; //esli
 
 export default (
   <Route path="/" component={App}>
-    <Route path="profile/:id" component={DisplayProfilePage} />
+    <Route path="/:id" component={DisplayProfilePage} />
   </Route>  
 );
 
