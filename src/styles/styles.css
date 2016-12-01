@@ -1,30 +1,34 @@
+#app {
+  max-width: 1300px;
+}
+
 #app, body{
   font: 1em 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #4d4d4d;
-  min-width: 100%;
-  max-width: 100%;
+  /*min-width: 100%;*/
+ 
   margin: 0 auto;
   overflow: auto;
   background-color: #EAECF0 !important;
 }
 
-.container-fluid {
+/*.container-fluid {
   padding-right: 0px !important;
   padding-left: 0px !important;
-}
+}*/
 
 a.active {
   color: orange;
 }
 
 nav {
-  padding-top: 1vh;
+  padding-top: 1em;
   background-color: #2d94c1 !important;
   border-color: #2d94c1 !important;
 }
 
 .tile h2 {
-  font-size: 1.9vh;
+  font-size: 1em;
   font-weight: 700;
   color: #000;
   text-transform: uppercase;
@@ -32,11 +36,11 @@ nav {
   padding-left: 25px;
   padding-top: 20px;
   margin: 0;
-  height: 4.2vh;
+  height: 3em;
   background-color: white;
 }
 .line {
-    height: 0.2vh;
+    height: 0.3em;
     width: 100%;
     background-color: #EAECF0;
 }
@@ -45,7 +49,7 @@ nav {
     margin: 0;
     width: 100%;
     text-align: center;
-    padding-bottom: 3vh;
+    padding: 1em;
     background-color: white;
 }
 .archetype-image {
@@ -54,23 +58,20 @@ nav {
     background-repeat: no-repeat;
 }
 .archetype-name {
-    height: 3vh;
-    line-height: 3vh;
+    height: 2em;
+    line-height: 2em;
     text-transform: uppercase;
     color: white;
-    margin-bottom: 2vh;
+    margin-bottom: 1.5em;
 }
 .archCol {
   /*width:33%;*/
 }
 
-.tagline-title {
-  margin-top:0.8vh;
-}
 
 .tagline-body {
-  padding:2vh;
-
+  font-size: 1em;
+  margin-bottom: 1.5em;
 }
 
 .col-lg-2 {
@@ -78,7 +79,7 @@ nav {
   padding-left: 0 !important;
 }
 .three-arch {
-  padding-top: 2vh;
+  padding-top: 1em;
   /*padding-left: 3vh;*/
 }
 .strength {
@@ -87,18 +88,18 @@ nav {
   border-radius: 5px;
   color: #313D4E;
   text-transform: uppercase;
-  height: 16px;
-  line-height: 16px;
-  font-size: 13px;
+  height: 1em;
+  line-height: 1em;
+  font-size: 0.9em;
   font-weight: 500;
   background: url(./../images/icon-grey-star.png) no-repeat;
   background-color: #F3F4F6;
-  background-position: 0.8vh center;
-  background-size: 17px;
+  background-position: 1em center;
+  background-size: 1em;
   margin: 5px;
   text-align: right;
   text-transform: uppercase;
-  height: 2.4vh;
+  height: 2.2em;
 }
 
 
@@ -190,3 +191,25 @@ nav {
 /*  display: table;
 */  margin: 0 auto;
 }
+
+
+.three-arch > div.col-lg-4, div.col-md-4, div.col-sm-4 {
+  padding: 0 !important;  
+}
+
+/*.three-arch div:first-child {
+  padding-left:15px !important;
+}
+
+.three-arch div:last-child {
+  padding-right:15px !important;
+}*/
+
+.sc-wrapper > div:first-child {
+  margin-bottom: 1.5em;
+}
+
+.sc-wrapper > div:last-child {
+  margin-bottom: 1.5em;
+}
+

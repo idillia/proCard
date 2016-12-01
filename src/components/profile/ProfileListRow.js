@@ -1,7 +1,6 @@
 import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 import _ from 'underscore';
-import TextMeWidget from './TextMeWidget';
 
 
 
@@ -82,52 +81,31 @@ const ProfileListRow = ({profile}) => {
   };
 
   return (
-    <div className="row">
-      <div className="col-lg-12">
-        <div className="twitter-avatar tile">
-          <div className = "ProfileAvatar">
-            <img src= {profile.image_url} className="ProfileAvatar-image"/>
-          </div>  
-          <div className="twitter-name">{profile.name}</div>
-          <div className="twitter-handler">@{profile["screen_name"]}</div>
-        </div>
-
-        <div className="tile">
-          <h2>Your Personas & Strengths</h2>
-          <div className="line"></div>
-          <div className="archetype-container">
-            <div className="row three-arch">
-              <div className="col-lg-4 archCol">
-                <div style={archImageStyle.one} className="archetype-image"></div>
-                <div className="archetype-name" style={archNameStyle["the_advocate"]}>{strImages[0]}</div>
-              </div>
-              <div className="col-lg-4 archCol">
-                <div className="archetype-image" style={archImageStyle.two}></div>
-                <div className="archetype-name" style={archNameStyle["the_go_getter"]}>{strImages[1]}</div>
-              </div>
-              <div className="col-lg-4 archCol">
-                <div className="archetype-image" style={archImageStyle.three}>
-                </div>
-                <div className="archetype-name" style={archNameStyle["the_maverick"]}>{strImages[2]}</div>
-              </div>
-            </div>
-            <span className="strength">{profile.sw[0][0]}</span>
-            <span className="strength">{profile.sw[0][1]}</span>
-            <span className="strength">{profile.sw[0][2]}</span>
-            <span className="strength">{profile.sw[0][3]}</span>
-            <span className="strength">{profile.sw[0][4]}</span>
-            <span className="strength">{profile.sw[0][5]}</span>
-
+    <div className="tile">
+      <h2>Your Personas & Strengths</h2>
+      <div className="line"></div>
+      <div className="archetype-container">
+        <div className="row three-arch">
+          <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 archCol">
+            <div style={archImageStyle.one} className="archetype-image"></div>
+            <div className="archetype-name" style={archNameStyle["the_advocate"]}>{strImages[0]}</div>
           </div>
-          <div>
-            <div className="tile tagline-title">
-              <h2>Tagline</h2>
-              <div className="line"></div>
-            <div className="tagline-body">{profile["pabs"]}</div>
+          <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 archCol">
+            <div className="archetype-image" style={archImageStyle.two}></div>
+            <div className="archetype-name" style={archNameStyle["the_go_getter"]}>{strImages[1]}</div>
+          </div>
+          <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4  archCol">
+            <div className="archetype-image" style={archImageStyle.three}>
             </div>
+            <div className="archetype-name" style={archNameStyle["the_maverick"]}>{strImages[2]}</div>
           </div>
         </div>
-        <TextMeWidget/>
+        <span className="strength">{profile.sw[0][0]}</span>
+        <span className="strength">{profile.sw[0][1]}</span>
+        <span className="strength">{profile.sw[0][2]}</span>
+        <span className="strength">{profile.sw[0][3]}</span>
+        <span className="strength">{profile.sw[0][4]}</span>
+        <span className="strength">{profile.sw[0][5]}</span>
       </div>
     </div>
   );
