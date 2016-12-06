@@ -7,7 +7,7 @@ const CtaDownloadWidget = () => {
       <div className = "cta-text-me text-me-hide col-lg-6 col-md-6 col-sm-6 col-xs-6" >
         <iframe frameBorder="0" height="39" marginHeight="0" marginWidth="0" src="https://api.linktexting.com/linkEmbed/6257b294-41ee-4546-a802-098bce68f1ea?autoIp=true" width="106%"></iframe>
       </div> 
-      <div className = "cta-apple-btn col-lg-3 col-md-3 col-sm-3 col-xs-3">     
+      <div className = "cta-apple-btn col-lg-3 col-md-3 col-sm-3 col-xs-6">     
         <div  className="btn btn-primary gc-btn-red" id="apple-link">
           <a target="_blank" href= "https://app.adjust.com/a04tv6">
             <div className="dnld-icon icon-social-apple"></div>
@@ -15,7 +15,7 @@ const CtaDownloadWidget = () => {
           </a>
         </div>
       </div>
-      <div className = "cta-android-btn col-lg-3 col-md-3 col-sm-3 col-xs-3"> 
+      <div className = "cta-android-btn col-lg-3 col-md-3 col-sm-3 col-xs-6"> 
         <div className="btn btn-primary gc-btn-orange" id="android-link">
           <a target="_blank" href= " https://app.adjust.com/a04tv6?fallback=https://play.google.com/store/apps/details?id=co.good.android&hl=en">
             <div className="dnld-icon icon-play"></div>
