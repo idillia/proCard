@@ -3,7 +3,7 @@ import React, {PropTypes} from 'react';
 const DownloadWidget = () => {
   return (
     <div>
-      <div className = "row text-widget">
+      <div className = "row text-widget text-me-hide">
           <div className = "col-lg-12"><iframe frameBorder="0" height="80" marginHeight="0" marginWidth="0" src="https://api.linktexting.com/linkEmbed/6257b294-41ee-4546-a802-098bce68f1ea?autoIp=true" width="420"></iframe></div>
       </div>  
       <div className = "row">  

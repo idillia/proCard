@@ -15,11 +15,11 @@ const Tagline = ({profile}) => {
       <DownloadWidget/>
     </div>
   )
-
-
 }
-  Tagline.propTypes = {
-    profile: PropTypes.object.isRequired
-  };
 
-  export default Tagline;  
+
+Tagline.propTypes = {
+  profile: PropTypes.object.isRequired
+};
+
+export default Tagline;  
