@@ -307,7 +307,7 @@ nav {
   padding-left: 30px !important; 
 }
 .cta-margin {
-  padding-bottom: 30px;
+  margin-bottom: 30px;
 }
 @media screen and (max-width: 700px) {
   .text-me-hide {
