@@ -5,7 +5,7 @@ const CtaDownloadWidget = () => {
   return (
     <div className="row">
       <div className = "cta-text-me text-me-hide col-lg-6 col-md-6 col-sm-6 col-xs-6" >
-        <iframe frameBorder="0" height="39" marginHeight="0" marginWidth="0" src="https://api.linktexting.com/linkEmbed/6257b294-41ee-4546-a802-098bce68f1ea?autoIp=true" width="100%"></iframe>
+        <iframe frameBorder="0" height="39" marginHeight="0" marginWidth="0" src="https://api.linktexting.com/linkEmbed/6257b294-41ee-4546-a802-098bce68f1ea?autoIp=true" width="106%"></iframe>
       </div> 
       <div className = "cta-apple-btn col-lg-3 col-md-3 col-sm-3 col-xs-3">     
         <div  className="btn btn-primary gc-btn-red" id="apple-link">

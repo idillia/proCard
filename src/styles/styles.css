@@ -314,7 +314,9 @@ nav {
     display: none;
   }
 }
-
+.linkTextingWidget .linkTextingButton {
+  width: 120px !important;
+}
 
 
 
