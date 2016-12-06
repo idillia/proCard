@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react';
 
-import mediaQueries from '../common/mediaQueries.js';
 
 const CtaDownloadWidget = () => {
   return (

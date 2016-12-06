@@ -27,7 +27,14 @@ export class ImagePage extends React.Component {
       <div >
 
         <div className="row">
-          <div className="col-lg-12 col-md-12 col-sm-12"><Avatar profile = {profile}/></div>
+          <div className="col-lg-12 col-md-12 col-sm-12">
+            <div className="twitter-avatar tile">
+              <div className = "ProfileAvatar">
+                <img src= {profile.image_url} className="ProfileAvatar-image"/>
+              </div>  
+              <div className="twitter-name">{profile.name}</div>
+            </div>
+          </div>
         </div>     
         <div className="row sc-wrapper">
           <div className="col-lg-12 col-md-12 col-sm-12"><ProfileListRow profile = {profile}/></div>

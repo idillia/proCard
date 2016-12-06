@@ -20,18 +20,18 @@ export function loadProfilesSuccess(profiles) {
   return {type: types.LOAD_PROFILES_SUCCESS, profiles};
 }
 
-export function loadProfiles() {
-  return dispatch => {
-    dispatch(beginAjaxCall());
-    rootRef.once("value").then(function(snapshot) {
+// export function loadProfiles() {
+//   return dispatch => {
+//     dispatch(beginAjaxCall());
+//     rootRef.once("value").then(function(snapshot) {
 
-      let profiles = snapshot.child("users").val();
-      dispatch(loadProfilesSuccess(profiles));
-    }).catch(error => {
-      throw(error);
-    });
-  };
-}
+//       let profiles = snapshot.child("users").val();
+//       dispatch(loadProfilesSuccess(profiles));
+//     }).catch(error => {
+//       throw(error);
+//     });
+//   };
+// }
 
 //Query Firebase before getting the whole object
 
@@ -57,18 +57,18 @@ export function loadProfiles() {
 
 // UNCOMMENT FUNCTION BELOW TO USE MOCKUP DATA
 
-// export function loadProfiles() {
-//   return dispatch => {
-//     dispatch(beginAjaxCall());
-//     return profileApi.getAllProfiles().then(profiles => {
-//       console.log("mockProf", profiles);
+export function loadProfiles() {
+  return dispatch => {
+    dispatch(beginAjaxCall());
+    return profileApi.getAllProfiles().then(profiles => {
+      console.log("mockProf", profiles);
 
-//       // console.log("mockProf", JSON.parse(profiles));
-//       dispatch(loadProfilesSuccess(profiles));
-//     }).catch(error => {
-//       throw(error);
-//     });
-//   };
-// }
+      // console.log("mockProf", JSON.parse(profiles));
+      dispatch(loadProfilesSuccess(profiles));
+    }).catch(error => {
+      throw(error);
+    });
+  };
+}
 
 
