@@ -8,7 +8,7 @@
   /*min-width: 100%;*/
  
   margin: 0 auto;
-  overflow: auto;
+  /*overflow: auto;*/
   background-color: #EAECF0 !important;
 }
 
@@ -282,6 +282,28 @@ nav {
   height: 407px;
 }
 
+/*.cta-wrap {
+  height: 80px;
+  border: 1px solid black;
+} 
+
+.cta-wrap div {
+  border: 1px solid red;
+  float: left;
+
+}
+
+.cta-text-me {
+    margin-right:10px;
+}
+
+.cta-apple-btn {
+    margin-right:10px;
+
+}.cta-android-btn {
+    margin-right:10px;
+}*/
+
 .cta-apple-btn {
   width:20%;
   padding:10px;
@@ -295,12 +317,13 @@ nav {
   float: left;
 }
 .cta-text-me {
-  float: left; /* Commenting this out results in another weird result*/
+  float: left;  
   width: 60%;
   padding: 10px;
   display: inline-block;
   box-sizing: border-box;
 }
+
 
 .cta-text {
   padding-bottom: 30px;
@@ -309,24 +332,18 @@ nav {
 .cta-margin {
   margin-bottom: 30px;
 }
+
+
+
+
+
+
+
 @media screen and (max-width: 700px) {
   .text-me-hide {
     display: none;
   }
-  .apple-btn {
-
-  }
-  .android-btn {
-    
-  }
-
 }
-.linkTextingWidget .linkTextingButton {
-  width: 120px !important;
-}
-
-
-
 
 
 
