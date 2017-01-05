@@ -42,10 +42,13 @@ export function loadProfiles() {
 //       snapshot.forEach(function(childSnapshot) {
 //         var key = childSnapshot.key;
 //         var childData = childSnapshot.val();
-//         if(childData["screen_name"] == "lmholliday") {
-//           console.log("key", childData);
- 
-//         }
+//         for (var i=0; i < childData.length; i++) {
+//           if(childData[i].screen_name == "scrappymcgyver") {
+//             console.log("key", childData[i]);
+//             dispatch(loadProfilesSuccess(childData[i]));
+
+//           }
+//         }  
 //       })
 //     }).catch(error => {
 //       throw(error);

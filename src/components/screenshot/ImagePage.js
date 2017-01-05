@@ -11,8 +11,14 @@ export class ImagePage extends React.Component {
     super(props, context);
 
     this.state = {
-      profile: Object.assign({}, this.props.profile)
+      profile: Object.assign({}, this.props.profile),
+      errored: false
     };
+      console.log("state", this.state)
+
+  }
+  componentWillMount() {
+    this.handleError();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -21,16 +27,27 @@ export class ImagePage extends React.Component {
     }
   }
 
+
+  handleError(event, x) {
+    console.log("isErr: ", event);
+    console.log("x: ", x);
+    this.setState({errored: true});
+  }
+
   render() {
+    let hideBrokenImg = {};
     const profile = this.state.profile;
+    if(this.state.errored){
+      // hideBrokenImg = {display: 'none'}
+      hideBrokenImg = {}
+    }
     return (
       <div >
-
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12">
             <div className="twitter-avatar tile">
               <div className = "ProfileAvatar">
-                <img src= {profile.image_url} className="ProfileAvatar-image"/>
+                <img src= {profile.image_url} className="ProfileAvatar-image" style={hideBrokenImg} onError={this.handleError.bind(this)}/>
               </div>  
               <div className="twitter-name">{profile.name}</div>
             </div>
@@ -42,6 +59,7 @@ export class ImagePage extends React.Component {
       </div>
     );
   }
+
 }
 
 ImagePage.propTypes = {
