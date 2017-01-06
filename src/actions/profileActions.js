@@ -23,12 +23,6 @@ if(url.match(re)) {
 
 }
 
-console.log("sn: ", url_screen_name);
-
-
-
-
-
 //Function below is action creater func and types.LOAD_PROFILES_SUCCESS is an action
 export function loadProfilesSuccess(profiles) {
   return {type: types.LOAD_PROFILES_SUCCESS, profiles};
@@ -56,12 +50,12 @@ export function loadProfiles() {
       snapshot.forEach(function(childSnapshot) {
         var key = childSnapshot.key;
         var childData = childSnapshot.val();
-        for (var i=0; i < childData.length; i++) {
-          if(childData[i].screen_name == url_screen_name) {
-            console.log("key", childData[i]);
-            dispatch(loadProfilesSuccess(childData[i]));
-
-          }
+        for (var prop in childData){ 
+          for (var i=0; i < childData[prop].length; i++) {
+            if(childData[prop][i].screen_name == url_screen_name) {
+              dispatch(loadProfilesSuccess(childData[prop][i]));
+            }
+          }  
         }  
       })
     }).catch(error => {

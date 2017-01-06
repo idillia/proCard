@@ -12,13 +12,8 @@ export class ImagePage extends React.Component {
 
     this.state = {
       profile: Object.assign({}, this.props.profile),
-      errored: false
+      imageStatus: null 
     };
-      console.log("state", this.state)
-
-  }
-  componentWillMount() {
-    this.handleError();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -27,27 +22,27 @@ export class ImagePage extends React.Component {
     }
   }
 
-
-  handleError(event, x) {
-    console.log("isErr: ", event);
-    console.log("x: ", x);
-    this.setState({errored: true});
+  handleImageLoaded() {
+    this.setState({ imageStatus: 'loaded' });
   }
 
   render() {
-    let hideBrokenImg = {};
+    let hideImg = {display: 'none'};
     const profile = this.state.profile;
-    if(this.state.errored){
-      // hideBrokenImg = {display: 'none'}
-      hideBrokenImg = {}
+
+    if(this.state.imageStatus == null) {
+      hideImg = {display: 'none'};
+    } else {
+      hideImg = {display: 'block'};
     }
+
     return (
       <div >
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12">
             <div className="twitter-avatar tile">
-              <div className = "ProfileAvatar">
-                <img src= {profile.image_url} className="ProfileAvatar-image" style={hideBrokenImg} onError={this.handleError.bind(this)}/>
+              <div className = "ProfileAvatar" style = {hideImg}>
+                <img src= {profile.image_url} className="ProfileAvatar-image"  onLoad={this.handleImageLoaded.bind(this)}  />
               </div>  
               <div className="twitter-name">{profile.name}</div>
             </div>

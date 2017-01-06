@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+ import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
 import _ from 'underscore';
 
@@ -17,7 +17,7 @@ const ProfileListRow = ({profile}) => {
     return genderArray;
   };
 
-  let theGender = pickGender(["_m", "_f"]);
+  let theGender = pickGender(["_m",   "_f"]);
 
   const invertedArchTypes = {
     Advocate:"the_advocate_n",
