@@ -20,41 +20,41 @@ export function loadProfilesSuccess(profiles) {
   return {type: types.LOAD_PROFILES_SUCCESS, profiles};
 }
 
-export function loadProfiles() {
-  return dispatch => {
-    dispatch(beginAjaxCall());
-    rootRef.once("value").then(function(snapshot) {
-
-      let profiles = snapshot.child("users").val();
-      dispatch(loadProfilesSuccess(profiles));
-    }).catch(error => {
-      throw(error);
-    });
-  };
-}
-
-//Query Firebase before getting the whole object
-
 // export function loadProfiles() {
 //   return dispatch => {
 //     dispatch(beginAjaxCall());
 //     rootRef.once("value").then(function(snapshot) {
-//       snapshot.forEach(function(childSnapshot) {
-//         var key = childSnapshot.key;
-//         var childData = childSnapshot.val();
-//         for (var i=0; i < childData.length; i++) {
-//           if(childData[i].screen_name == "scrappymcgyver") {
-//             console.log("key", childData[i]);
-//             dispatch(loadProfilesSuccess(childData[i]));
 
-//           }
-//         }  
-//       })
+//       let profiles = snapshot.child("users").val();
+//       dispatch(loadProfilesSuccess(profiles));
 //     }).catch(error => {
 //       throw(error);
 //     });
 //   };
 // }
+
+//Query Firebase before getting the whole object
+
+export function loadProfiles() {
+  return dispatch => {
+    dispatch(beginAjaxCall());
+    rootRef.once("value").then(function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+        var key = childSnapshot.key;
+        var childData = childSnapshot.val();
+        for (var i=0; i < childData.length; i++) {
+          if(childData[i].screen_name == "scrappymcgyver") {
+            console.log("key", childData[i]);
+            dispatch(loadProfilesSuccess(childData[i]));
+
+          }
+        }  
+      })
+    }).catch(error => {
+      throw(error);
+    });
+  };
+}
 
 
 

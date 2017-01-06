@@ -15,6 +15,8 @@ export class ProfilePage extends React.Component {
     this.state = {
       profile: Object.assign({}, this.props.profile)
     };
+
+    // console.log("this.state", this.state)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -46,14 +48,15 @@ ProfilePage.propTypes = {
   actions: PropTypes.object.isRequired
 };
 
-function getProfileById(profiles, id) {
-  const profile = profiles.filter(profile => profile["screen_name"] == id);
-  if(profile) return profile[0];
-  return null;
-}
+// function getProfileById(profiles, id) {
+//   const profile = profiles.filter(profile => profile["screen_name"] == id);
+//   if(profile) return profile[0];
+//   return null;
+// }
 
 function mapStateToProps(state, ownProps) {
-  const profileId = ownProps.params.id;// from the path '/profile/:id'
+
+  // const profileId = ownProps.params.id;// from the path '/profile/:id'
   // console.log("profileId", profileId)
   let profile = {
     "id":"",
@@ -71,9 +74,10 @@ function mapStateToProps(state, ownProps) {
     "is_everyday_filter": "",
     "folowers_count_filter": ""
   };
+     console.log("state", Array.isArray(state.profiles))
 
-  if(profileId && state.profiles.length > 0) {
-    profile = getProfileById(state.profiles, profileId);
+  if(!Array.isArray(state.profiles)) {
+    profile = state.profiles
   }
 
   return {
