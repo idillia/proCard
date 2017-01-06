@@ -3,6 +3,4 @@ terminal.glue
 dist
 .DS_Store
 npm-debug.log
-al_twitter_users*
 firebaseConfig*
-firebaseMockData*
