@@ -67,15 +67,9 @@ ImagePage.propTypes = {
   actions: PropTypes.object.isRequired
 };
 
-function getProfileById(profiles, id) {
-  const profile = profiles.filter(profile => profile["screen_name"] == id);
-  if(profile) return profile[0];
-  return null;
-}
 
 function mapStateToProps(state, ownProps) {
-  const profileId = ownProps.params.id;// from the path '/profile/:id'
-  // console.log("profileId", profileId)
+
   let profile = {
     "id":"",
     "screen_name": "",
@@ -93,8 +87,8 @@ function mapStateToProps(state, ownProps) {
     "folowers_count_filter": ""
   };
 
-  if(profileId && state.profiles.length > 0) {
-    profile = getProfileById(state.profiles, profileId);
+  if(!Array.isArray(state.profiles)) {
+    profile = state.profiles
   }
 
   return {

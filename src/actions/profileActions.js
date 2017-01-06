@@ -10,8 +10,22 @@ firebase.initializeApp(config);
 
 let rootRef = firebase.database().ref();
 
-//Query Firebase before getting the whole object
-// let rootRef = firebase.database().ref("users").orderByKey();
+var re = '([^/]*)$';
+var re1 = '([^/]*)/$';
+
+var url = window.location.href;
+var url_screen_name;
+
+if(url.match(re)) {
+  url_screen_name = url.match(re)[1]
+} else if(url.match(re1)){
+  url_screen_name = url.match(re1)[1]
+
+}
+
+console.log("sn: ", url_screen_name);
+
+
 
 
 
@@ -43,7 +57,7 @@ export function loadProfiles() {
         var key = childSnapshot.key;
         var childData = childSnapshot.val();
         for (var i=0; i < childData.length; i++) {
-          if(childData[i].screen_name == "scrappymcgyver") {
+          if(childData[i].screen_name == url_screen_name) {
             console.log("key", childData[i]);
             dispatch(loadProfilesSuccess(childData[i]));
 
