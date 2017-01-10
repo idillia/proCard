@@ -19,11 +19,9 @@ export class Avatar extends React.Component {
 
     if(this.state.imageStatus == null) {
       hideImg = {display: 'none'};
-      console.log("props", this.state)
 
     } else {
       hideImg = {display: 'block'};
-      console.log("props", this.state)
 
     }
     return (
