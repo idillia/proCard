@@ -18,7 +18,7 @@ const DownloadWidget = () => {
 
           <div className= "col-lg-6 col-md-6 col-sm-6 col-xs-6">
             <div className="btn btn-primary gc-btn-orange" id="android-link">
-              <a target="_blank" href= " https://app.adjust.com/a04tv6?fallback=https://play.google.com/store/apps/details?id=co.good.android&hl=en">
+              <a target="_blank" href= "https://app.adjust.com/a04tv6?fallback=https://play.google.com/store/apps/details?id=co.good.android&hl=en">
                 <div className="dnld-icon icon-play"></div>
                 <div><i className="fa fa-android" aria-hidden="true"></i>Google</div>
               </a>  
